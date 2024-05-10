@@ -32,8 +32,14 @@ void generate_schedule(char** teams, const int TEAMS_LENGTH) {
                 j = rand() % TEAMS_LENGTH;
             }
 
-            printf("%s vs. %s\n", teams[i], teams[j]);
-            
+            int winner_index = rand() % 2;
+
+            if(winner_index == 0) {
+                printf("%s(W) vs. %s(L)\n", teams[i], teams[j]);
+            } else {
+                printf("%s(L) vs. %s(W)\n", teams[i], teams[j]);
+            }
+
             teams_scheduled[i] = 1;
             teams_scheduled[j] = 1;
         }
